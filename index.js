@@ -1,0 +1,30 @@
+var express = require("express");
+var bodyParser = require("body-parser");
+var db = require("./DB");
+var app = express();
+app.set('view engine','ejs');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+const port = process.env.PORT || 3000;
+
+app.listen(port,(req,res) => console.log("Listening Port:"+port));
+
+app.get("/",db.Index);
+app.get("/AlbumList",db.AlbumList);
+app.get("/SanatciList",db.SanatciList);
+app.get("/MuzikTurList",db.MuzikTurList);
+app.get("/MuzikTurInsert", db.MuzikTurInsert);
+app.post("/MuzikTurInsert",db.MuzikTurInsertPost);
+app.get("/SanatciInsert",db.SanatciInsert);
+app.post("/SanatciInsert",db.SanatciInsertPost);
+app.get("/AlbumInsert",db.AlbumInsert);
+app.post("/AlbumInsert",db.AlbumInsertPost);
+app.get("/AlbumUpdate/:id",db.AlbumUpdate);
+app.post("/AlbumUpdate",db.AlbumUpdatePost);
+app.get("/MuzikTurUpdate/:id",db.MuzikTurUpdate);
+app.post("/MuzikTurUpdate",db.MuzikTurUpdatePost);
+app.get("/SanatciUpdate/:id",db.SanatciUpdate);
+app.post("/SanatciUpdate",db.SanatciUpdatePost);
+app.get("/AlbumDelete/:id",db.AlbumDelete);
+app.get("/MuzikTurDelete/:id",db.MuzikTurDelete);
+app.get("/SanatciDelete/:id",db.SanatciDelete);

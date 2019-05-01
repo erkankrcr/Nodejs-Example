@@ -1,0 +1,30 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "internet teknolojileri ödevi ",
+  "main": "index.js",
+  "scripts": {
+    "test": "console.log(\"Başarılı\");",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erkankrcr/Nodejs-Example.git"
+  },
+  "keywords": [
+    "Nodejs"
+  ],
+  "author": "erkankrcr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erkankrcr/Nodejs-Example/issues"
+  },
+  "homepage": "https://github.com/erkankrcr/Nodejs-Example5#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bulma": "^0.7.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mssql": "^5.1.0"
+  }
+}

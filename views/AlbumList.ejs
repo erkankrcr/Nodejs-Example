@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="containter">
+    <a class="button is-success is-left" href="AlbumInsert">Albüm ekle</a>
+  </div>
+
+  <div class="containter field is-horizontal is-center">
+    <div class="notification">
+      <table class="table is-bordored">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Albüm Adı</th>
+            <th scope="col">Düzenle</th>
+            <th scope="col">Sil</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(function(item) { %>
+
+          <tr>
+            <td class="row"><%=item.AlbumId%></td>
+            <td class="row"><%=item.AlbumAdi%></td>
+            <td class="row"><a href="/AlbumUpdate/<%=item.AlbumId%>" class="button is-warning ">Güncelle</a></td>
+            <td class="row"><a href="/AlbumDelete/<%=item.AlbumId%>" class="button is-danger" onclick="return window.confirm('Silmek İstediğinize Eminmisiniz ? ');">Sil</a></td>
+
+          </tr>
+          <% }); %>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+
+
+
+</body>
+
+</html>
