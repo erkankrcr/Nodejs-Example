@@ -194,9 +194,9 @@ sql.connect(config, function (err) {
   var request = new sql.Request();
   request.query("select * from Album where AlbumId="+req.params.id , function (err, veri1) {
     if (err) console.log(err) 
-    request.query("select * from Sanatci where SanatciId ="+3 , function (err, veri2) {
+    request.query("select * from Sanatci where SanatciId ="+veri1.recordset[0].SanatciId , function (err, veri2) {
       if (err) console.log(err) 
-      request.query("select * from MuzikTur where MuzikTurId ="+4 , function (err, veri3) {
+      request.query("select * from MuzikTur where MuzikTurId ="+veri1.recordset[0].MuzikTurId , function (err, veri3) {
         if (err) console.log(err) 
         request.query("select * from MuzikTur" , function (err, veri4) {
           if (err) console.log(err) 
@@ -207,8 +207,7 @@ sql.connect(config, function (err) {
           });
         });
       });
-    });
-       
+    });   
   });
 
 });
